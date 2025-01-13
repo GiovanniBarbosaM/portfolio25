@@ -84,3 +84,29 @@ footer {
     margin-top: 20px;
     font-size: 16px;
 }
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+    h1.giovanni {
+        font-size: 30px;
+    }
+
+    nav.menu button {
+        font-size: 18px;
+        padding: 8px 15px;
+    }
+
+    main {
+        flex-direction: column;
+    }
+
+    .boasvindas {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    h1.giovanni {
+        font-size: 25px;
+    }
