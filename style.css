@@ -5,143 +5,154 @@
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Faz com que o body ocupe toda a altura da página */
+    min-height: 100vh;
     background-image: url('imagens/noite.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
-    text-align: center;
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-}
-
-h1.giovanni {
-    margin: 0px;
-    padding-top: 30px;
-    padding-bottom: 20px;
+    text-align: center;
 }
 
 .container {
-    flex: 1; /* Faz o conteúdo principal expandir e empurrar o footer para baixo */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* Footer no Rodapé */
-footer {
-    background: #000000;
-    color: #efddc3;
-    text-align: center;
-    padding: 10px;
-    font-size: 14px;
-    position: relative;
+/* Header e Navegação */
+header.nome {
     width: 100%;
+    text-align: center;
+    margin-bottom: 40px;
 }
 
-/* Estilo do título principal */
-.nome {
-    font-family: Arial, Helvetica, sans-serif;
+h1.giovanni {
+    margin: 0;
+    padding: 20px 0;
     color: #efddc3;
-    text-align: center;
-    margin: 0px;
-    font-size: 40px;
+    font-size: 80px;
     font-weight: bold;
 }
 
-/* Botões */
-button {
+nav.menu {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+nav.menu button {
     font-family: 'Kaushan Script', sans-serif;
     background: linear-gradient(to right, #0b082c00, #f7f7f700);
     border: none;
-    color: #000;
+    color: #efddc3;
     cursor: pointer;
-    font-size: 35px;
+    font-size: 40px;
     font-weight: bold;
+    padding: 10px 20px;
     transition: all 0.3s ease;
-    margin: 10px;
-    justify-content: center;
 }
 
-button:hover {
+nav.menu button:hover {
     background: linear-gradient(to right, #0b082c33, #f7f7f733);
+    color: #857fa0;
     border: 2px solid rgba(255, 255, 255, 0.2);
-    color: #fff;
     border-radius: 50%;
 }
 
-/* Links */
-a {
-    font-family: 'Kaushan Script', sans-serif;
-    color: #efddc3;
+nav.menu a {
     text-decoration: none;
+    color: inherit;
 }
 
-/* Imagens */
-
-.imgperfil {
-    float: left;
-    width: 40%;
-    margin-top: 70px;
-    padding-top: 100px;
-    opacity: 0.6;
-    transition: opacity 0.3s ease;
-    height: 400px;
-    display: block;
-    margin: auto;
+/* Imagem e Boas-vindas */
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 20px;
 }
 
-img:hover {
-    opacity: 1;
-}
-
-
-/* Animação de flutuação */
-.floating-image {
+.imgperfil img {
     width: 300px;
-    animation: float 3s ease-in-out infinite;
+    height: auto;
+    padding-right:250px;
+    opacity: 0.7;
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-@keyframes float {
-    0% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-15px);
-    }
-    100% {
-        transform: translateY(0px);
-    }
+.imgperfil img:hover {
+    opacity: 2;
+    transform: scale(1.05);
 }
 
-/* Subtítulos */
-h2 {
-    font-family: 'Kaushan Script', sans-serif;
-    color: #efddc3;
-    background: linear-gradient(to right, #0b082c00, #f7f7f700);
-    padding: 10px;
-    font-size: 50px;
-    font-weight: bold;
-    transition: all 0.3s ease;
-    margin: auto;
-}
-
-/* Parágrafos */
-p {
-    font-family: 'Kaushan Script', sans-serif;
-    color: #efddc3;
-    background: linear-gradient(to right, #0b082c00, #f7f7f700);
-    font-size: 35px;
-    transition: all 0.3s ease;
-    text-align: justify;
-    margin: 30px;
-    text-indent: 30px;
-}
-
-/* Seções específicas */
 .boasvindas {
-    float: right;
-    width: 60%;
-    margin-top: 100px;
-    text-align: center;
+    max-width: 600px;
+    text-align: rigth;
+    color: #efddc3;
 }
 
+.boasvindas h2 {
+    font-family: 'Kaushan Script', sans-serif;
+    font-size: 50px;
+    margin-bottom: 10px;
+}
 
+.boasvindas p {
+    font-family: 'Kaushan Script', sans-serif;
+    font-size: 35px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background-color: #000000;
+    color: #fff;
+    padding: 10px 0;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    h1.giovanni {
+        font-size: 30px;
+    }
+
+    nav.menu button {
+        font-size: 18px;
+        padding: 8px 15px;
+    }
+
+    main {
+        flex-direction: column;
+    }
+
+    .boasvindas {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    h1.giovanni {
+        font-size: 25px;
+    }
+
+    nav.menu button {
+        font-size: 16px;
+        padding: 5px 10px;
+    }
+
+    .boasvindas p {
+        font-size: 16px;
+    }
+}
